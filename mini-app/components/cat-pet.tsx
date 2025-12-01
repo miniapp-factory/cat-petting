@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { toast } from "sonner";
+import "./cat-pet.css";
 
 export default function CatPet() {
   const [breed, setBreed] = useState<"orange" | "gray" | "black" | "calico">("orange");
@@ -79,7 +80,7 @@ export default function CatPet() {
         <img
           src={breeds[breed]}
           alt="Cat"
-          className="w-[400px] h-[400px] object-contain cursor-pointer"
+          className="w-[400px] h-[400px] object-contain cursor-pointer -scale-x-100"
           onClick={handlePet}
         />
         <audio ref={audioRef} src="/purr.mp3" preload="auto" />

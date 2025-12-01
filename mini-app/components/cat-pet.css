@@ -1,0 +1,29 @@
+.heart {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  background: radial-gradient(circle at 30% 30%, #ff6b81, #ff3b3b);
+  clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+  animation: rise 3s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes rise {
+  0% { transform: translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateY(-200px) scale(1.5); opacity: 0; }
+}
+
+.sparkle {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: radial-gradient(circle, #ffd700, #ff8c00);
+  border-radius: 50%;
+  animation: sparkle 2s ease-out forwards;
+  pointer-events: none;
+}
+
+@keyframes sparkle {
+  0% { transform: scale(1); opacity: 1; }
+  100% { transform: scale(2); opacity: 0; }
+}
