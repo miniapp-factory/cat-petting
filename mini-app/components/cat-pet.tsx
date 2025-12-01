@@ -3,14 +3,14 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
-import { useToast } from "@/components/ui/use-toast";
+import { toast } from "sonner";
 
 export default function CatPet() {
   const [breed, setBreed] = useState<"orange" | "gray" | "black" | "calico">("orange");
   const [counter, setCounter] = useState(0);
   const [messages, setMessages] = useState<string[]>([]);
   const audioRef = useRef<HTMLAudioElement>(null);
-  const { toast } = useToast();
+  // No toast hook needed; using sonner's toast function
 
   const breeds = {
     orange: "/cat-orange.png",
@@ -66,12 +66,11 @@ export default function CatPet() {
 
   useEffect(() => {
     if (counter > 0) {
-      toast({
-        title: `You petted the cat ${counter} time${counter > 1 ? "s" : ""}!`,
+      toast(`You petted the cat ${counter} time${counter > 1 ? "s" : ""}!`, {
         duration: 2000,
       });
     }
-  }, [counter, toast]);
+  }, [counter]);
 
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
