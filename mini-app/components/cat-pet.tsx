@@ -2,7 +2,6 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
 import { toast } from "sonner";
 
 export default function CatPet() {
@@ -97,7 +96,7 @@ export default function CatPet() {
             key={b}
             variant={breed === b ? "default" : "outline"}
             size="sm"
-            onClick={() => setBreed(b as any)}
+            onClick={() => setBreed(b as "orange" | "gray" | "black" | "calico")}
           >
             {b.charAt(0).toUpperCase() + b.slice(1)}
           </Button>
