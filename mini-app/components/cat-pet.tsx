@@ -75,15 +75,15 @@ export default function CatPet() {
   return (
     <main className="flex flex-col items-center justify-center min-h-screen bg-background text-foreground">
       <div className="relative">
-        <div id="heart-container" className="absolute inset-0 pointer-events-none" />
-        <div id="sparkle-container" className="absolute inset-0 pointer-events-none" />
+        <div id="heart-container" className="absolute inset-0 pointer-events-none" style={{ zIndex: 5 }} />
+        <div id="sparkle-container" className="absolute inset-0 pointer-events-none" style={{ zIndex: 5 }} />
         <img
           src={breeds[breed]}
           alt="Cat"
           className="w-[400px] h-[400px] object-contain cursor-pointer -scale-x-100"
           onClick={handlePet}
         />
-        <audio ref={audioRef} src="/purr.mp3" preload="auto" />
+        <audio ref={audioRef} src="https://cdnjs.cloudflare.com/ajax/libs/ion-sound/3.0.7/sounds/bell_ring.mp3" preload="auto" />
       </div>
       <div className="mt-4 flex items-center gap-4">
         <span className="text-xl font-semibold">Pet Count: {counter}</span>
